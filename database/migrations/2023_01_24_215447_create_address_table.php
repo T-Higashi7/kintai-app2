@@ -14,8 +14,8 @@ class CreateAddressTable extends Migration
     public function up()
     {
         Schema::create('address', function (Blueprint $table) {
-            //連番
-            $table->bigIncrements('id');
+            //id
+            $table->id('id');
             //患者ID
             $table->foreignId('patient_id');
             //住所

@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reserve', function (Blueprint $table) {
+            //id
             $table->id();
             //患者ID
             $table->foreignId('patient_id');

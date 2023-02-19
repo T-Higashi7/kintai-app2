@@ -14,8 +14,8 @@ class CreateInsuranceCardTable extends Migration
     public function up()
     {
         Schema::create('insurance_card', function (Blueprint $table) {
-            //連番
-            $table->bigIncrements('id');
+            //id
+            $table->id('id');
             //患者ID
             $table->foreignId('patient_id');
             //保険者番号・記号・番号
