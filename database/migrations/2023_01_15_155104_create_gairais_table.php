@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGairaiTable extends Migration
+class CreateGairaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateGairaiTable extends Migration
      */
     public function up()
     {
-        Schema::create('gairai', function (Blueprint $table) {
+        Schema::create('gairais', function (Blueprint $table) {
             //$table->bigIncrements('id');
             //受付日
             $table->date('uke_day');
@@ -46,6 +46,6 @@ class CreateGairaiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gairai');
+        Schema::dropIfExists('gairais');
     }
 }

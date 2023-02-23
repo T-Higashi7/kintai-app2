@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reserve', function (Blueprint $table) {
+        Schema::create('reserves', function (Blueprint $table) {
             //id
             $table->id();
             //患者ID
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reserve');
+        Schema::dropIfExists('reserves');
     }
 };
