@@ -15,15 +15,21 @@ class CreateInsuranceCardsTable extends Migration
     {
         Schema::create('insurance_cards', function (Blueprint $table) {
             //id
-            $table->id('id');
+            $table->id();
             //患者ID
             $table->foreignId('patient_id');
-            //保険者番号・記号・番号
-            $table->string('insurance_card_number',100);
+            //保険者番号
+            $table->char('insurance_card_number',8);
+            //記号
+            $table->string('symbol',20);
+            //番号
+            $table->string('number');
+            //枝番
+            $table->char('branch_number',2)->nullable();
             //資格開始日
             $table->date('start_date');
-            //資格終了日
-            $table->date('end_date');
+            //資格有効
+            $table->boolean('insurance_card_valid');
             //保険証最終確認日
             $table->date('last_confirmed_date');
             $table->timestamps();

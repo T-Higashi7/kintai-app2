@@ -13,15 +13,15 @@ class CreateAddressTable extends Migration
      */
     public function up()
     {
-        Schema::create('address', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             //id
-            $table->id('id');
+            $table->id();
             //患者ID
             $table->foreignId('patient_id');
             //住所
-            $table->string('address',255);
-            //連絡電話番号
-            $table->string('contact_address',255);
+            $table->string('address');
+            //連絡先電話番号
+            $table->string('telephone_number');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateAddressTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('address');
+        Schema::dropIfExists('addresses');
     }
 }

@@ -19,13 +19,13 @@ return new class extends Migration
             //患者ID
             $table->foreignId('patient_id');
             //予約日
-            $table->date('day');
-            //予約種別
-            $table->char('kinds',5);
+            $table->date('reserve_day');
+            //予約種別(ex 検査、診察、リハビリ、栄養指導等)
+            $table->string('reserve_kinds',5);
             //予約時間
-            $table->time('time');
+            $table->time('reserve_time');
             //予約コメント
-            $table->text('comment');
+            $table->text('reserve_comment')->nullable();
             $table->timestamps();
         });
     }

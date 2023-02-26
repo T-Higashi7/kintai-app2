@@ -20,6 +20,8 @@ class CreatePatientsTable extends Migration
             //患者名
             $table->string('patient_name');
             $table->timestamps();
+            //idではなく、患者IDを主キーとする。
+            $table->primary('id');
         });
     }
 
