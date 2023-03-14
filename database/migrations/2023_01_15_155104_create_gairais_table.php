@@ -16,11 +16,11 @@ class CreateGairaisTable extends Migration
         Schema::create('gairais', function (Blueprint $table) {
             $table->id();
             //受付日
-            $table->date('uke_day');
+            $table->date('day');
             //当日受付番号
-            $table->integer('uke_no');
+            $table->integer('no');
             //当日受付時間
-            $table->time('uke_time');
+            $table->time('time');
             //外部キーの場合は外部キーとしての定義の仕方がある。foreignId
             //患者ID
             $table->foreignId('patient_id');
@@ -29,16 +29,16 @@ class CreateGairaisTable extends Migration
             //診察終了日時
             $table->dateTime('finished_consltation_date')->nullable();
             //診療録記載日時
-            $table->dateTime('chart_entry')->nullable();
+            $table->dateTime('medical_record_entry_date')->nullable();
             //文字数が決まっているものはstring 決まっていないものはtext
             //受付コメント
             $table->text('comment')->nullable();
             //会計終了日時
-            $table->dateTime('accounting_end')->nullable();;
+            $table->dateTime('accounted_date')->nullable();;
             $table->timestamps();
             //受付時間と受付番号を複合キーにして重複不可とする。
             //最近のフレームワークは複合キーを使用できないので、仮にIDを主キーとする。
-            $table->unique(['uke_day','uke_no']);
+            $table->unique(['day','no']);
 
         });
     }

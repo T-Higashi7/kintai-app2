@@ -14,7 +14,7 @@ class CreateAddressTable extends Migration
     public function up()
     {
         Schema::create('addresses', function (Blueprint $table) {
-            //id
+            //id 自動増分
             $table->id();
             //患者ID
             $table->foreignId('patient_id');

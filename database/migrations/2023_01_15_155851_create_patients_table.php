@@ -18,7 +18,7 @@ class CreatePatientsTable extends Migration
             //患者ID
             $table->char('id',8);
             //患者名
-            $table->string('patient_name');
+            $table->string('name');
             $table->timestamps();
             //idではなく、患者IDを主キーとする。
             $table->primary('id');

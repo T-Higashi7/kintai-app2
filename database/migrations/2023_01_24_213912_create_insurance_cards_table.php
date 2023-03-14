@@ -22,8 +22,8 @@ class CreateInsuranceCardsTable extends Migration
             $table->char('insurance_card_number',8);
             //記号
             $table->string('symbol',20);
-            //番号
-            $table->string('number');
+            //番号 stringからintegerに変更
+            $table->integer('number');
             //枝番
             $table->char('branch_number',2)->nullable();
             //資格開始日
@@ -31,7 +31,7 @@ class CreateInsuranceCardsTable extends Migration
             //資格有効
             $table->boolean('insurance_card_valid');
             //保険証最終確認日
-            $table->date('last_confirmed_date');
+            $table->date();
             $table->timestamps();
         });
     }

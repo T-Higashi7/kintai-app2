@@ -105,8 +105,8 @@ return [
     | localized telephone numbers, street address information and more.
     |
     */
-
-    'faker_locale' => 'en_US',
+    //fakerで使用するものを日本語
+    'faker_locale' => 'ja_JP',
 
     /*
     |--------------------------------------------------------------------------
